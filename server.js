@@ -3,7 +3,7 @@ var bodyParser = require("body-parser");
 var mongoose = require("mongoose");
 // let nodemailer = require('nodemailer');
 const PDFDocument = require('pdfkit');
-const PORT = process.env.port || 8000;
+const port = process.env.PORT || 8000;
 const {
     ClientRequest
 } = require("http");
@@ -334,7 +334,7 @@ app.get("/", (req, res) => {
         "Allow-access-Allow-Origin": '*'
     })
     return res.redirect('front_page.html');
-}).listen(process.env.port|| 8000, () => {
+}).listen(port, () => {
     console.log("Listening on PORT 8000");
 });
 
