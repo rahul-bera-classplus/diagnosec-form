@@ -3,7 +3,7 @@ var bodyParser = require("body-parser");
 var mongoose = require("mongoose");
 // let nodemailer = require('nodemailer');
 const PDFDocument = require('pdfkit');
-const port = process.env.port || 8000;
+const PORT = process.env.port || 8000;
 
 
 const {
@@ -330,7 +330,7 @@ app.get("/", (req, res) => {
     return res.redirect('front_page.html');
 
 }).listen(process.env.port || 8000, () => {
-    // console.log("Listening on PORT 8000");
+    console.log("Listening on PORT 8000");
 });
 
 
