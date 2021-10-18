@@ -14,12 +14,12 @@
     }
 
     #aw h1{
-        padding: 75px 50px;
+        padding: 50px 100px;
     }
 
     #tey {
-        min-height: 300px;
-        max-height: 400px;
+        min-height: 100px;
+        max-height: 200px;
     }
 
     #comt a {
