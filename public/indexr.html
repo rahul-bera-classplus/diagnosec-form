@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styler.css">
+   
+</head>
+
+<body>
+    <section id="diag">
+        <div class="container" id="tey">
+            <form action="/form" name="tant" method="POST" >
+                <div class="step step-1 active" id="we">
+                    <div class="form-group">
+                        <label for="firstname"><b>First Name</b></label><br><input type="text" name="firstname" id="firstname" placeholder="पहला नाम" required>
+                        <b class="form-text text-danger" id="firstnameError"></b>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="lastname"><b>Last Name</b></label><br><input type="text"
+                            name="lastname" id="lastname" placeholder="उपनाम" required>
+                        <b class="form-text text-danger" id="lastnameError"></b>
+                        </div>
+                    <div class="form-group"><label for="age"><b>Age</b></label><br><input type="number" name="age"
+                            id="age" placeholder="उम्र" required>
+                        <b class="form-text text-danger" id="ageError"></b></div>
+  
+                           <a href="/front_page.html"><button type="button" class="previous-btn">Previous</button></a> 
+                    <button type="button" class="next-btn">Next</button>
+                </div>
+
+
+                <div class="step step-2 " id="we">
+                    <div class="form-group"><label>
+                         <b>Choose your Gender</b> </label><br>
+                         <input type="radio" name="gender" value="Male" id="gender"><label for="Male">Male </label><br>
+                        <input type="radio" name="gender" value="Female"><label for="Female">Female</label>
+                        <b class="form-text text-danger" id="genderError"></b>
+                    </div>
+                    <div class="form-group">
+                        <label for="email"><b>Email-id</b></label><br>
+                        <input type="email"
+                            name="email" id="email" placeholder="ईमेल आईडी">
+                        <b class="form-text text-danger" id="emailError"></b>
+                    </div>
+                    <div class="form-group"><label for="phone"><b>Phone Number</b></label><br><input type="tel" pattern="[0-9]{10}" name="phonenum" id="phone" placeholder="फ़ोन नंबर">
+                            <b class="form-text text-danger" id="phonenumError"></b>
+                        </div>
+                        <button type="button"
+                        class="previous-btn">Previous</button>
+                    <button type="button" class="next-btn">Next</button>
+                </div>
+
+
+                <div class="step step-3 ">
+                    <div class="form-group" id="qq">
+                        <h4>What are the Symtoms please select</h4>
+
+                        <table id="ttr">
+                            <tr>
+                                <th id="ttd">Symptom</th>
+                                <th id="ttd">Yes</th>
+                                <th id="ttd">NO</th>
+                            </tr>
+                            <tr>
+                                <td><b>Cough</b> (खांसी)</td>
+                                <td><input type="radio" name="Cough" value="Yes"></td>
+                                <td><input type="radio" name="Cough" value="No"></td>
+                            </tr>
+                            <tr>
+                                <td><b> Expectoration</b>(कफ)</td>
+                                <td><input type="radio" name="Expectoration" value="Yes"></td>
+                                <td><input type="radio" name="Expectoration" value="No"></td>
+                            </tr>
+                            <tr>
+                                <td><b>Throat Pain</b> (गले में दर्द)</td>
+                                <td><input type="radio" name="Throat_Pain" value="Yes"></td>
+                                <td><input type="radio" name="Throat_Pain" value="No"></td>
+                            </tr>
+                            <tr>
+                                <td><b>Swallowing</b> (निगलने में समस्या)</td>
+                                <td><input type="radio" name="Swallowing" value="Yes"></td>
+                                <td><input type="radio" name="Swallowing" value="No"></td>
+                            </tr>
+                            <tr>
+                                <td><b>Fever</b> (बुखार)</td>
+                                <td><input type="radio" name="Fever" value="Yes"></td>
+                                <td><input type="radio" name="Fever" value="No"></td>
+                            </tr>
+                            <tr>
+                                <td><b>Breathlessness</b> (सांस फूलना)</td>
+                                <td><input type="radio" name="Breathlessness" value="Yes"></td>
+                                <td><input type="radio" name="Breathlessness" value="No"></td>
+                            </tr>
+                            <td> <b>Chest Pain</b> (छाती में दर्द)</td>
+                            <td><input type="radio" name="Chest_Pain" id="Cp"  value="Yes"></td>
+                            <td><input type="radio" name="Chest_Pain" id="Cp"  value="No"></td>
+                            </tr>
+                            <td> <b>Wheeze</b> (जोर से साँस लेना)</td>
+                            <td><input type="radio" name="Wheeze" id="wh"  value="Yes"></td>
+                            <td><input type="radio" name="Wheeze" id="wh"  value="No"></td>
+                            </tr>
+
+                        </table>
+                    </div>
+                    <button type="button" class="previous-btn">previous</button>
+                    <button type="button" class="next-btn">Next</button>
+                </div>
+
+
+                <div class="step step-4 ">
+                    <div class="form-group">
+                        <div class="box" id="box">
+                            <p>How's your pain on the scale of 1-10</p>
+                            <div class="rating">
+                                <input type="radio" name="rating_on_the_Scale_of_10" id="rate10" value="10"><label
+                                    for="rate10">10</label>
+
+                                <input type="radio" name="rating_on_the_Scale_of_10" id="rate9" value="9"> <label
+                                    for="rate9">9</label>
+                                <input type="radio" name="rating_on_the_Scale_of_10" id="rate8" value="8"> <label
+                                    for="rate8">8</label>
+
+                                <input type="radio" name="rating_on_the_Scale_of_10" id="rate7" value="7"> <label
+                                    for="rate7">7</label>
+                                <input type="radio" name="rating_on_the_Scale_of_10" id="rate6" value="6"> <label
+                                    for="rate6">6</label>
+
+                                <input type="radio" name="rating_on_the_Scale_of_10" id="rate5" value="5"> <label
+                                    for="rate5">5</label>
+
+                                <input type="radio" name="rating_on_the_Scale_of_10" id="rate4" value="4"> <label
+                                    for="rate4">4</label>
+
+                                <input type="radio" name="rating_on_the_Scale_of_10" id="rate3" value="3"> <label
+                                    for="rate3">3</label>
+
+                                <input type="radio" name="rating_on_the_Scale_of_10" id="rate2" value="2"> <label
+                                    for="rate2">2</label>
+
+                                <input type="radio" name="rating_on_the_Scale_of_10" id="rate1" value="1"> <label
+                                    for="rate1">1</label>
+                            </div>
+                        </div>
+                    </div>
+                    <button type="button" class="previous-btn">previous</button>
+                    <button type="button" class="next-btn">Next</button>
+                </div>
+
+                <div class="step step-5">
+                    <div class="form-group">
+                        <h4>How is the Condition.</h4>
+                        <select class="form-select" aria-label="Default select example" name="condition">
+
+                            <option selected>Select one</option>
+                            <option value="Constant">Constant</option>
+                            <option value="Constant-worse at times">Constant- Worse at times</option>
+                            <option value="Gomes and Goes">Comes & Goes</option>
+                        </select> <br><br>
+                        <h4>Since When</h4>
+                        <select class="form-select" aria-label="Default select example" name="since" required>
+
+                            <option selected>Select one</option>
+                            <option value="Today">Today</option>
+                            <option value="10-15_days">10-15 days</option>
+                            <option value="more_than_one_month">More than one month</option>
+                        </select>
+                    </div>
+                    <button type="button" class="previous-btn">previous</button>
+                    <button type="button" class="next-btn">Next</button>
+                </div>
+
+
+                <div class="step step-6">
+                    <div class="form-group">
+                        <h1>Medical History</h1>
+                        <input type="checkbox" name="HBP" id="mh" value="yes"><label for="High_BP" > High Blood-Pressure</label>
+                        <br>
+
+                        <input type="checkbox" name="Diabetes" id="mh" value="yes"> <label for="Diabetes">Diabetes</label> <br>
+
+                        <input type="checkbox" name="Cholestrol" id="mh" value="yes"> <label for="Cholestrol">Cholestrol</label>
+                    </div>
+
+                    <button type="button" class="next-btn">Next</button>
+                </div>
+
+            <div class="step step-7  ">
+                <div class="form-group" id="tgf">
+                    <h1>Allergy</h1>
+                    <label for="allergy">Particular Food/Drugs </label> <br>
+            
+                    <label for="Yes"> Yes </label>
+                    <input type="radio" name="allergy" value="Yes">
+                    <label for="No"> No </label>
+                    <input type="radio" name="allergy" value="No"><br>
+            
+                    <sub>If yes please specify</sub>
+                    <input type="text" name="allergy" placeholder="Please specify ">
+                </div>
+                <button type="button" class="previous-btn">previous</button>
+                <button type="button" class="next-btn">Next</button>
+            </div>
+            
+            
+            <div class="step step-8">
+                <div class="form-group" id="tgf">
+                    <h1>Surgical History</h1>
+                    <label for="Surgery">Any surgery done before </label> <br>
+                    <label for="yes">YES</label> <input type="radio" name="surgery" id="surgery" value="yes">
+                    <label for="no">NO</label> <input type="radio" name="surgery" id="surgery" value="no">
+                </div>
+                <button type="button" class="previous-btn">previous</button>
+                <button type="button" class="next-btn">Next</button>
+            </div>
+            
+            <div class="step step-9 ">
+                <div class="form-group">
+                    <h1>Social History</h1>
+                    <input type="checkbox" name="smoking" id="mh" value="yes"><label for="smoking"> Smoking </label>
+                    <br>
+            
+                    <input type="checkbox" name="alcohol" id="mh" value="yes"> <label for="alcohol"> Alcohol
+                        Consumption </label> <br>
+            
+                    <input type="checkbox" name="Tobacco" id="mh" value="yes"> <label for="Tobacco"> Tobacco or
+                        Gutka Consumption </label>
+                </div>
+                <button type="button" class="previous-btn">previous</button>
+                <button type="button" class="next-btn">Next</button>
+            </div>
+
+
+            <div class="step step-10 ">
+                <div class="form-group">
+                    <h1>Add Something (Any particular detail)</h1>
+                  <input type="text" name="suggestion" id="suggestion">
+                </div>
+
+                    <button type="button" class="previous-btn">previous</button>
+                    <button type="submit" class="submit-btn" onclick="hh()">submit</button>
+                </div>
+
+            </form>
+            <h3><b>DiagnoSec AI</b><br>
+                <p>Future of Healthcare</p>
+            </h3>
+        </div>
+    </section>
+
+    <script src="/index.js"></script>
+    <script>
+         function mydac() {
+                var a = document.tant.Cough;
+                for (i = 0; i < a.length; i++) {
+                    if (a[i].checked == true)
+                        return true;
+                }
+                document.getElementById("messages").innerHTML = "Please select for Cough"
+                return false;
+            }
+
+      function myFunction() {
+            document.getElementById("demo").innerHTML = "Thank You for visiting Diagnosec";
+        }
+    </script>
+</body>
+
+</html>
