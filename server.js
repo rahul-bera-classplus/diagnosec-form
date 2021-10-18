@@ -322,7 +322,7 @@ app.post("/form", (req, res) => {
     doc.pipe(fs.createWriteStream('file.pdf'))
     doc.end();
 
-    return res.redirect('public/end.html')
+    return res.redirect('../end.html')
 })
 
 if (process.env.NODE_ENV == "production") {
