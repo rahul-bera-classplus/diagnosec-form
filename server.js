@@ -335,7 +335,7 @@ app.get("/", (req, res) => {
         "Allow-access-Allow-Origin": '*'
     })
     return res.redirect('front_page.html');
-}).listen(process.env.port|| 8000, () => {
+}).listen(process.env.PORT|| 8000, () => {
     console.log("Listening on PORT 8000");
 });
 
