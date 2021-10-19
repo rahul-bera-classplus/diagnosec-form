@@ -1,7 +1,7 @@
 var express = require("express");
 var bodyParser = require("body-parser");
 var mongoose = require("mongoose");
-// let nodemailer = require('nodemailer');
+let nodemailer = require('nodemailer');
 const PDFDocument = require('pdfkit');
 const port = process.env.PORT || 8000;
 const {
@@ -339,33 +339,33 @@ app.get("/", (req, res) => {
 });
 
 
-// let transporter = nodemailer.createTransport({
-//     service: 'gmail',
-//     auth: {
-//         user: 'Diagnosecnotify@gmail.com',
-//         pass: 'Diagnoemailsend'
-//     }
-// });
+let transporter = nodemailer.createTransport({
+    service: 'gmail',
+    auth: {
+        user: 'Diagnosecnotify@gmail.com',
+        pass: 'Diagnoemailsend'
+    }
+});
 
-// var mailOptions = {
-//     from: 'Diagnosecnotify@gmail.com',
-//     to: 'vaishnavigupta292@gmail.com',
-//     subject: 'Patient Detail',
-//     text: `Patient form detail
+var mailOptions = {
+    from: 'Diagnosecnotify@gmail.com',
+    to: 'vaishnavigupta292@gmail.com',
+    subject: 'Patient Detail',
+    text: `Patient form detail
         
-//           DiagnoSec AI
-//           Contact details : 9372182521
-//           Email: diagnosecai02@gmail.com
-//           Website: https://diagnosec.com`,
-//     attachments: [{
-//         filename: 'file.pdf',
-//         contentType: 'application/pdf'
-//     }]
-// };
-// transporter.sendMail(mailOptions, function (error, info) {
-//     if (error) {
-//         console.log(error);
-//     } else {
-//         console.log('Email sent: ' + info.response);
-//     }
-// })
+          DiagnoSec AI
+          Contact details : 9372182521
+          Email: diagnosecai02@gmail.com
+          Website: https://diagnosec.com`,
+    attachments: [{
+        filename: 'file.pdf',
+        contentType: 'application/pdf'
+    }]
+};
+transporter.sendMail(mailOptions, function (error, info) {
+    if (error) {
+        console.log(error);
+    } else {
+        console.log('Email sent: ' + info.response);
+    }
+})
