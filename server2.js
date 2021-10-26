@@ -314,14 +314,7 @@ app.post("/form", (req, res) => {
     });
     doc.pipe(fs.createWriteStream('form.pdf'))
     doc.end();
-
-    return res.redirect('../end.html')
-})
-
-if (process.env.NODE_ENV == "production") {
-    app.use(express.static("client/public"));
-}
-let transporter = nodemailer.createTransport({
+    let transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
         user: 'Diagnosecnotify@gmail.com',
@@ -351,6 +344,14 @@ transporter.sendMail(mailOptions, function (error, info) {
         console.log('Email sent: ' + info.response);
     }
 })
+
+    return res.redirect('../end.html')
+})
+
+if (process.env.NODE_ENV == "production") {
+    app.use(express.static("client/public"));
+}
+
 
 app.get("/", (req, res) => {
     res.set({
