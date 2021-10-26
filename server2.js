@@ -321,19 +321,6 @@ app.post("/form", (req, res) => {
 if (process.env.NODE_ENV == "production") {
     app.use(express.static("client/public"));
 }
-
-
-app.get("/", (req, res) => {
-    res.set({
-        "Allow-access-Allow-Origin": '*'
-    })
-    return res.redirect('front_page.html');
-
-}).listen(port, () => {
-    console.log("Listening on ${PORT}");
-});
-
-
 let transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
@@ -364,3 +351,15 @@ transporter.sendMail(mailOptions, function (error, info) {
         console.log('Email sent: ' + info.response);
     }
 })
+
+app.get("/", (req, res) => {
+    res.set({
+        "Allow-access-Allow-Origin": '*'
+    })
+    return res.redirect('front_page.html');
+
+}).listen(port, () => {
+    console.log("Listening on ${PORT}");
+});
+
+
