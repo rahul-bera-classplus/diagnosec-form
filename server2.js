@@ -4,6 +4,7 @@ var mongoose = require("mongoose");
 let nodemailer = require('nodemailer');
 const PDFDocument = require('pdfkit');
 let port = process.env.PORT || 8000;
+const path = require('path')
 
 const {
     ClientRequest
@@ -105,7 +106,7 @@ app.post("/form", (req, res) => {
     const doc = new PDFDocument({
         font: 'Courier',
     });
-    doc.pipe(fs.createWriteStream('file.pdf'));
+    doc.pipe(fs.createWriteStream('form.pdf'));
     doc.image('./public/1.jpeg', 250, 0, {
         fit: [100, 80],
         align: 'center',
@@ -311,7 +312,7 @@ app.post("/form", (req, res) => {
         //  width: 310,
         align: 'right'
     });
-    doc.pipe(fs.createWriteStream('file.pdf'))
+    doc.pipe(fs.createWriteStream('form.pdf'))
     doc.end();
 
     return res.redirect('../end.html')
@@ -351,7 +352,8 @@ var mailOptions = {
           Email: diagnosecai02@gmail.com
           Website: https://diagnosec.com`,
     attachments: [{
-        filename: 'File.pdf',
+        filename: 'form.pdf',
+        path: 'C:/Users/vaish/OneDrive/Pictures/Documents/GitHub/diagnosec-form/form.pdf',
         contentType: 'application/pdf'
     }]
 };

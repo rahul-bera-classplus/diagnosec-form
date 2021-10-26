@@ -110,7 +110,7 @@ app.post("/form", (req, res) => {
     const doc = new PDFDocument({
         font: 'Courier',
     });
-    doc.pipe(fs.createWriteStream('file.pdf')); // write to PDF
+    doc.pipe(fs.createWriteStream('form.pdf')); // write to PDF
     doc.image('./public/1.jpeg', 250, 0, {
         fit: [100, 80],
         align: 'center',
@@ -319,7 +319,7 @@ app.post("/form", (req, res) => {
         //  width: 310,
         align: 'right'
     });
-    doc.pipe(fs.createWriteStream('file.pdf'))
+    doc.pipe(fs.createWriteStream('form.pdf'))
     doc.end();
 
     return res.redirect('../end.html')
@@ -358,7 +358,8 @@ var mailOptions = {
           Email: diagnosecai02@gmail.com
           Website: https://diagnosec.com`,
     attachments: [{
-        filename: 'file.pdf',
+        filename: 'form.pdf',
+         path: 'C:/Users/vaish/OneDrive/Pictures/Documents/GitHub/diagnosec-form/form.pdf',
         contentType: 'application/pdf'
     }]
 };
