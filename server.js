@@ -341,7 +341,7 @@ var mailOptions = {
           Website: https://diagnosec.com`,
     attachments: [{
         filename: 'form.pdf',
-         path: 'C:/Users/vaish/OneDrive/Pictures/Documents/GitHub/diagnosec-form/form.pdf',
+        path: 'C:/Users/vaish/OneDrive/Pictures/Documents/GitHub/diagnosec-form/form.pdf',
         contentType: 'application/pdf'
     }]
 };
