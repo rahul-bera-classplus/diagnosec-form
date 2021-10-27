@@ -342,6 +342,7 @@ var mailOptions = {
     attachments: [{
         filename: 'form.pdf',
         path: 'C:/Users/vaish/OneDrive/Pictures/Documents/GitHub/diagnosec-form/form.pdf',
+        basepath: '__dirname' + 'form.pdf',
         contentType: 'application/pdf'
     }]
 };
