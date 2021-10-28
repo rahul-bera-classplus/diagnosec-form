@@ -4,6 +4,7 @@ var mongoose = require("mongoose");
 let nodemailer = require('nodemailer');
 const PDFDocument = require('pdfkit');
 const port = process.env.PORT || 8000;
+const path = require('path');
 const {
     ClientRequest
 } = require("http");
@@ -105,6 +106,7 @@ app.post("/form", (req, res) => {
 
 
 
+  
 
 
     const doc = new PDFDocument({
@@ -327,7 +329,9 @@ let transporter = nodemailer.createTransport({
         user: 'Diagnosecnotify@gmail.com',
         pass: 'Diagnoemailsend'
     }
+    
 });
+    path.basename('../diagnosec-form/form.pdf', '.pdf');
 
 var mailOptions = {
     from: 'Diagnosecnotify@gmail.com',
@@ -343,7 +347,7 @@ var mailOptions = {
         filename: 'form.pdf',
         path: 'C:/Users/vaish/OneDrive/Pictures/Documents/GitHub/diagnosec-form/form.pdf',
         // basepath: '__dirname' + 'form.pdf',
-        basepath: ('../diagnosec-form/form.pdf', '.pdf'),
+     
         contentType: 'application/pdf'
     }]
 };
