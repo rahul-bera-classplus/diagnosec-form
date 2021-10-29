@@ -322,7 +322,7 @@ app.post("/form", (req, res) => {
         pass: 'Diagnoemailsend'
     }
 });
-
+path.basename('/form.pdf');
 var mailOptions = {
     from: 'Diagnosecnotify@gmail.com',
     to: 'vaishnavigupta292@gmail.com',
