@@ -5,6 +5,7 @@ let nodemailer = require('nodemailer');
 const PDFDocument = require('pdfkit');
 let port = process.env.PORT || 8000;
 const path = require('path');
+path.basename("../form.pdf")
 const {
     ClientRequest
 } = require("http");
@@ -324,7 +325,7 @@ app.post("/form", (req, res) => {
     doc.pipe(fs.createWriteStream('form.pdf'))
     doc.end();
    
-    path.join(__dirname, '/form.pdf');
+
 
 
     let transporter = nodemailer.createTransport({
