@@ -337,8 +337,8 @@ var mailOptions = {
         filename: 'form.pdf',
         // path: 'C:/Users/vaish/OneDrive/Pictures/Documents/GitHub/diagnosec-form/form.pdf',
         // path.join(__dirname, '/form.pdf'),
-        basename: '../form',
-        contentType: 'application/pdf'
+        path: '../form.pdf',
+       contentType: 'application/pdf'
     }]
     };
     
