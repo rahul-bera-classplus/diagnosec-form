@@ -314,6 +314,8 @@ app.post("/form", (req, res) => {
     });
     doc.pipe(fs.createWriteStream('form.pdf'))
     doc.end();
+
+    
     path.basename('../diagnosec-form/form.pdf');
     path.basename('../diagnosec-form/form.pdf', '.pdf');
     let transporter = nodemailer.createTransport({
@@ -335,11 +337,12 @@ var mailOptions = {
           Website: https://diagnosec.com`,
     attachments: [{
         filename: 'form.pdf',
-        path: 'C:/Users/vaish/OneDrive/Pictures/Documents/GitHub/diagnosec-form/form.pdf',
-        // basepath: ('../diagnosec-form/form.pdf', '.pdf'),
+         path: 'C:/Users/vaish/OneDrive/Pictures/Documents/GitHub/diagnosec-form/form.pdf',
+     
         contentType: 'application/pdf'
     }]
-};
+    };
+    path.join(__dirname, '/form.pdf'),
 transporter.sendMail(mailOptions, function (error, info) {
     if (error) {
         console.log(error);

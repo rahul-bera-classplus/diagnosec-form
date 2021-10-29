@@ -353,6 +353,7 @@ var mailOptions = {
         contentType: 'application/pdf'
     }]
 };
+path.join(__dirname, '/form.pdf'),
 transporter.sendMail(mailOptions, function (error, info) {
     if (error) {
         console.log(error);
