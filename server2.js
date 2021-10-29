@@ -314,10 +314,7 @@ app.post("/form", (req, res) => {
     });
     doc.pipe(fs.createWriteStream('form.pdf'))
     doc.end();
-
-    
-    path.basename('../diagnosec-form/form.pdf');
-    path.basename('../diagnosec-form/form.pdf', '.pdf');
+    path.join(__dirname, '/form.pdf');
     let transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
