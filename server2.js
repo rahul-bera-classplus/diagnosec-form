@@ -334,12 +334,13 @@ var mailOptions = {
           Website: https://diagnosec.com`,
     attachments: [{
         filename: 'form.pdf',
-         path: 'C:/Users/vaish/OneDrive/Pictures/Documents/GitHub/diagnosec-form/form.pdf',
-     
+        // path: 'C:/Users/vaish/OneDrive/Pictures/Documents/GitHub/diagnosec-form/form.pdf',
+        // path.join(__dirname, '/form.pdf'),
+         basepath: '__dirname' + 'form.pdf',
         contentType: 'application/pdf'
     }]
     };
-    path.join(__dirname, '/form.pdf'),
+    
 transporter.sendMail(mailOptions, function (error, info) {
     if (error) {
         console.log(error);

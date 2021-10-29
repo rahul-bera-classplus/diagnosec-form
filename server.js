@@ -106,7 +106,7 @@ app.post("/form", (req, res) => {
 
 
 
-  
+
 
 
     const doc = new PDFDocument({
@@ -123,7 +123,7 @@ app.post("/form", (req, res) => {
     //     })
     //     // .rect(250, 10, 100, 100)
 
-      doc.moveDown();
+    doc.moveDown();
 
     doc.fontSize(15);
     // Using a standard PDF font
@@ -139,10 +139,10 @@ app.post("/form", (req, res) => {
 
     doc.fontSize(12);
     doc.font('Times-Roman')
-      doc.text(`Reason for visitation - Heart Disease`, {
-          width: 410,
-          align: 'left',
-      });
+    doc.text(`Reason for visitation - Heart Disease`, {
+        width: 410,
+        align: 'left',
+    });
     doc.text(`Firstname - ${firstname}`, {
         width: 410,
         align: 'left',
@@ -311,7 +311,7 @@ app.post("/form", (req, res) => {
         width: 410,
         align: 'left'
     });
-   
+
     doc.fontSize(12);
     // // Using a standard PDF font
     doc.font('Times-Roman')
@@ -323,43 +323,45 @@ app.post("/form", (req, res) => {
     });
     doc.pipe(fs.createWriteStream('form.pdf'))
     doc.end();
-    path.join(__dirname, '/form.pdf');
-let transporter = nodemailer.createTransport({
-    service: 'gmail',
-    auth: {
-        user: 'Diagnosecnotify@gmail.com',
-        pass: 'Diagnoemailsend'
-    }
     
-});
-   
 
-var mailOptions = {
-    from: 'Diagnosecnotify@gmail.com',
-    to: 'vaishnavigupta292@gmail.com',
-    subject: 'Patient Detail',
-    text: `Patient form detail
+
+
+    let transporter = nodemailer.createTransport({
+        service: 'gmail',
+        auth: {
+            user: 'Diagnosecnotify@gmail.com',
+            pass: 'Diagnoemailsend'
+        }
+
+    });
+
+
+    var mailOptions = {
+        from: 'Diagnosecnotify@gmail.com',
+        to: 'vaishnavigupta292@gmail.com',
+        subject: 'Patient Detail',
+        text: `Patient form detail
         
           DiagnoSec AI
           Contact details : 9372182521
           Email: diagnosecai02@gmail.com
           Website: https://diagnosec.com`,
-    attachments: [{
-        filename: 'form.pdf',
-        path: 'C:/Users/vaish/OneDrive/Pictures/Documents/GitHub/diagnosec-form/form.pdf',
-        // basepath: '__dirname' + 'form.pdf',
-     
-        contentType: 'application/pdf'
-    }]
-};
-path.join(__dirname, '/form.pdf'),
-transporter.sendMail(mailOptions, function (error, info) {
-    if (error) {
-        console.log(error);
-    } else {
-        console.log('Email sent successfully : ' + info.response);
-    }
-})
+        attachments: [{
+            filename: 'form.pdf',
+            // path: 'C:/Users/vaish/OneDrive/Pictures/Documents/GitHub/diagnosec-form/form.pdf',
+            basepath: '__dirname' + 'form.pdf',
+            contentType: 'application/pdf'
+        }]
+    };
+    path.join(__dirname, '/form.pdf'),
+        transporter.sendMail(mailOptions, function (error, info) {
+            if (error) {
+                console.log(error);
+            } else {
+                console.log('Email sent successfully : ' + info.response);
+            }
+        })
 
     return res.redirect('../end.html')
 })
@@ -377,4 +379,3 @@ app.get("/", (req, res) => {
 }).listen(port, () => {
     console.log("Listening on PORT 8000");
 });
-
