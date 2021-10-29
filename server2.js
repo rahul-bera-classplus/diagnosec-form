@@ -314,7 +314,9 @@ app.post("/form", (req, res) => {
     });
     doc.pipe(fs.createWriteStream('form.pdf'))
     doc.end();
-    path.join(__dirname, '/form.pdf');
+
+    global.__basedir = __dirname;
+    var base_path = __basedir
     let transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
@@ -322,7 +324,6 @@ app.post("/form", (req, res) => {
         pass: 'Diagnoemailsend'
     }
 });
-path.basename('/form.pdf');
 var mailOptions = {
     from: 'Diagnosecnotify@gmail.com',
     to: 'vaishnavigupta292@gmail.com',
@@ -336,7 +337,6 @@ var mailOptions = {
         filename: 'form.pdf',
         // path: 'C:/Users/vaish/OneDrive/Pictures/Documents/GitHub/diagnosec-form/form.pdf',
         // path.join(__dirname, '/form.pdf'),
-         basepath: '__dirname' + 'form.pdf',
         contentType: 'application/pdf'
     }]
     };
