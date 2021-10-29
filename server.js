@@ -347,7 +347,7 @@ app.post("/form", (req, res) => {
           Website: https://diagnosec.com`,
         attachments: [{
             filename: 'form.pdf',
-            path: path.join(__dirname, '/form.pdf'),
+            path: path.join(__dirname, '../form.pdf'),
             contentType: 'application/pdf'
         }]
     };
