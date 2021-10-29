@@ -323,6 +323,8 @@ app.post("/form", (req, res) => {
     });
     doc.pipe(fs.createWriteStream('form.pdf'))
     doc.end();
+    path.basename('../diagnosec-form/form.pdf');
+        
 let transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
@@ -331,7 +333,7 @@ let transporter = nodemailer.createTransport({
     }
     
 });
-    path.basename('../diagnosec-form/form.pdf', '.pdf');
+   
 
 var mailOptions = {
     from: 'Diagnosecnotify@gmail.com',
