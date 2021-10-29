@@ -325,17 +325,13 @@ app.post("/form", (req, res) => {
     doc.pipe(fs.createWriteStream('form.pdf'))
     doc.end();
 
-    path.basename("../form.pdf")
-
     let transporter = nodemailer.createTransport({
         service: 'gmail',
         auth: {
             user: 'Diagnosecnotify@gmail.com',
             pass: 'Diagnoemailsend'
         }
-
     });
-
 
 
 
@@ -351,19 +347,18 @@ app.post("/form", (req, res) => {
           Website: https://diagnosec.com`,
         attachments: [{
             filename: 'form.pdf',
-            // path: 'C:/Users/vaish/OneDrive/Pictures/Documents/GitHub/diagnosec-form/form.pdf',
-            basepath: '__dirname' + 'form.pdf',
+            path: path.join(__dirname, '/form.pdf'),
             contentType: 'application/pdf'
         }]
     };
-    path.join(__dirname, '/form.pdf'),
-        transporter.sendMail(mailOptions, function (error, info) {
-            if (error) {
-                console.log(error);
-            } else {
-                console.log('Email sent successfully : ' + info.response);
-            }
-        })
+
+    transporter.sendMail(mailOptions, function (error, info) {
+        if (error) {
+            console.log(error);
+        } else {
+            console.log('Email sent successfully : ' + info.response);
+        }
+    })
 
     return res.redirect('../end.html')
 })
