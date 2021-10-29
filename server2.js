@@ -6,7 +6,7 @@ const PDFDocument = require('pdfkit');
 let port = process.env.PORT || 8000;
 const path = require('path');
  
-path.basename("../form.pdf")
+
 const {
     ClientRequest
 } = require("http");
@@ -315,9 +315,8 @@ app.post("/form", (req, res) => {
     });
     doc.pipe(fs.createWriteStream('form.pdf'))
     doc.end();
-
-    global.__basedir = __dirname;
-    var base_path = __basedir
+    path.basename("../form.pdf")
+  
     let transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
